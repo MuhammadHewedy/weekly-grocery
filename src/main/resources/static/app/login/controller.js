@@ -26,7 +26,7 @@ angular.module('myApp')
             function(error) {
                 $rootScope.user = null;
                 AlertService.error(error.data.message);
-                console.error(error.data);
+                console.log(error.data);
             });
     }
 
