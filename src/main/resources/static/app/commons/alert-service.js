@@ -35,8 +35,7 @@ function doAlert($rootScope, $location, $anchorScroll, alert, timeMillis, defaul
     $rootScope.alerts = [];
     $rootScope.alerts.push(alert);
     autoHide(alertId, (timeMillis ? timeMillis : defaultTimeMillis))
-
-    $location.hash(alertId);
+//    $location.hash(alertId);
     $anchorScroll();
 }
 
