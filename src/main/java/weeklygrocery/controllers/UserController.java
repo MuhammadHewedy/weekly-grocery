@@ -31,7 +31,6 @@ public class UserController {
 
 	@PostMapping("/register")
 	public ResponseEntity<?> register(@Valid @RequestBody User user) {
-
 		if (userRepo.findByUsername(user.getUsername()).isPresent()) {
 			return ResponseEntity.badRequest().body(Response.of("user.already.exists"));
 		}
