@@ -28,6 +28,8 @@ public class Plan extends BaseEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
+	
+	private Integer weekNo;
 
 	@NotNull
 	@JsonProperty(access = Access.WRITE_ONLY)

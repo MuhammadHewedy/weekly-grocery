@@ -30,7 +30,7 @@
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
   <![endif]-->
 <div class="container">
-	<div class="alertContainer" >
+	<div class="alertContainer" style="height: 100px;">
 		  <div class="alert alert-{{alert.type}} alert-dismissable" ng-repeat="alert in alerts">
 	        <div style="overflow: visible" id="alert.{{alert.id}}"></div>
 	        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
@@ -71,12 +71,14 @@
   <script src="login/service.js"></script>
   <script src="menu/service.js"></script>
   <script src="register/service.js"></script>
+  <script src="weeklist/add/service.js"></script>
 
   <!-- controllers -->
   <script src="login/controller.js"></script>
   <script src="home/controller.js"></script>
   <script src="menu/controller.js"></script>
   <script src="register/controller.js"></script>
+  <script src="weeklist/add/controller.js"></script>
 
 </body>
 </html>

@@ -42,6 +42,7 @@ public class PlanController {
 	@PreAuthorize("hasRole('ROLE_USER')")
 	public ResponseEntity<?> addPlan(@RequestBody @Valid Plan plan) {
 		plan.setUser(Util.currentUser().get());
+		plan.getItems().forEach(i -> i.setPlan(plan));
 		planRepo.save(plan);
 		return ResponseEntity.ok().build();
 	}

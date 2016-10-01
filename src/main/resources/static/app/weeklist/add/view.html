@@ -1,0 +1,52 @@
+<div class="row">
+	<h3>{{'weeklist.add.title' | translate}} <span style="color: red;">{{weekNo()}}</span></h3>
+	<form name="form">
+		<table class="table" novalidate>
+			<thead>
+				<tr>
+					<th translate>name</th>
+					<th style="width: 14%;" translate>count</th>
+					<th style="width: 5%;"></th>
+					<th style="width: 5%;"></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="item in list">
+					<td>
+						<div class="form-group">
+							<input type="text" class="form-control" name="itemName{{$index}}" autofocus ng-model="item.name"
+								required />
+							<div ng-messages="form['itemName' + $index].$error" ng-if="form['itemName' + $index].$dirty" class="has-error">
+								<div class="help-block" ng-message="required">{{'field.required' | translate}}</div>
+							</div>
+						</div>
+					</td>
+					<td>
+						<div class="form-group">
+							<input type="text" class="form-control" name="itemCount{{$index}}" ng-model="item.count"
+								placeholder="1" ng-pattern='/^[0-9]+$/' />
+							<div ng-messages="form['itemCount' + $index].$error" ng-if="form['itemCount' + $index].$dirty" class="has-error">
+								<div class="help-block" ng-message="pattern">{{'field.numeric' | translate}}</div>
+							</div>
+						</div>
+					</td>
+					
+					<td >
+						<button class="btn btn-danger" ng-click="remove($index)" ng-if="list.length != 1">
+						<i class="fa fa-minus" aria-hidden="true"></i></button>
+					</td>
+
+					<td >
+						<button class="btn btn-success" ng-click="addNew()"
+							ng-if="list.length -1  === $index"
+							ng-disabled="form['itemName' + $index].$invalid || form['itemCount' + $index].$invalid">
+						<i class="fa fa-plus" aria-hidden="true"></i></button>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<button class="btn btn-primary col-xs-1" ng-click="save()" ng-disabled="form.$invalid" translate>
+			save
+		</button>
+	</form>
+</div>

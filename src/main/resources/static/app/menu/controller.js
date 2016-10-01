@@ -18,4 +18,8 @@ angular.module('myApp')
             $rootScope.user = null;
         })
     }
+    
+    $scope.isActive = function(itemLink){
+    	return $location.path() == itemLink;
+    }
 }]);

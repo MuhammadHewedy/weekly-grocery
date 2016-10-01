@@ -1,5 +1,7 @@
 {
 	"app.title" : "البقالة الإسبوعيه",
+	"success": "تمت العمليه بنجاح",
+	"fail": "حدث خطأ",
     "login.title": "تسجيل الدخول",
     "login": "دخول",
     "username": "إسم المستخدم",
@@ -23,5 +25,12 @@
 	"User account is locked": "الحساب مغلق",
 	"repeat.password": "أعد إدخال كلمة المرور",
 	"passwords.not.match": "كلمتي المرور غير متطابقتين, أعد المحاولة",
-	"field.required": "الحقل مطلوب"
+	"field.required": "الحقل مطلوب",
+	"add_new_week": "إضافة إسبوع جديد",
+	"week_list": "الأسابيع الماضية",
+	"name": "الطلب",
+	"count": "العدد",
+	"field.numeric": "الحقل يقبل ارقام فقط",
+	"save": "حفظ",
+	"weeklist.add.title": "قائمة الإسبوع رقم "
 }
