@@ -13,7 +13,7 @@ angular.module('myApp')
                     },
                     function(error) {
                         $rootScope.user = null;
-                        AlertService.error(error.data.message);
+                        AlertService.error({msg: error.data.message});
                         console.log(error.data.message);
                     });
         }

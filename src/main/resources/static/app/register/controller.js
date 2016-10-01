@@ -21,14 +21,14 @@ angular.module('myApp')
     $scope.register = function() {
     	
     	if ($scope.userInfo.password !== $scope.userInfo.password2){
-    		AlertService.error('passwords.not.match');
+    		AlertService.error({msg: 'passwords.not.match'});
     	}else{
     		RegisterService.register($scope.userInfo).then(
     	            function() {
     	            	LoginServiceProxy.login($scope.userInfo);
     	            },
     	            function(error) {
-    	                AlertService.error(error.data.message);
+    	                AlertService.error({msg: error.data.message});
     	                console.log(error.data.message);
     	            });
     	}

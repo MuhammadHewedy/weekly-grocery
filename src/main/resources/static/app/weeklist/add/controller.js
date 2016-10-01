@@ -29,8 +29,7 @@ angular.module('myApp')
     		weekNo: $scope.weekNo(),
     		items: $scope.list
     	}).then(function(){
-    		$location.path('/weeklist');
-    		AlertService.success();
+    		AlertService.success({next: '/weeklist'});
     	}, function(){
     		AlertService.error();
     	});
