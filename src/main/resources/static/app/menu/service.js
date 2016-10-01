@@ -3,11 +3,15 @@
 angular.module('myApp')
 
 .value('MenuService', [{
-    title: 'manage_admin',
-    role: ['ROLE_SUPER_ADMIN'],
-    link: '/admin'
+    title: 'manage_users',
+    role: ['ROLE_ADMIN'],
+    link: '/users'
 }, {
-    title: 'manage_applicant',
-    role: ['ROLE_SUPER_ADMIN', 'ROLE_ADMIN'],
-    link: '/applicant'
+    title: 'week_list',
+    role: ['ROLE_USER'],
+    link: '/weeklist'
+}, {
+    title: 'add_new_week',
+    role: ['ROLE_USER'],
+    link: '/weeklist/add'
 }]);

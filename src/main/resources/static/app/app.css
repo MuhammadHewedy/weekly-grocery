@@ -1,41 +1,16 @@
 /* app css stylesheet */
 
 body{
+	font-family: 'Amiri', serif;
 	font-family: 'Cairo', sans-serif;
-	/* font-family: 'Amiri', serif; */
 }
 .menu {
   list-style: none;
   border-bottom: 0.1em solid black;
   margin-bottom: 2em;
   padding: 0 0 0.5em;
-  font-size: 20px;
+  font-size: 16px;
   text-align: center;
-}
-
-.menu:before {
-  content: "[";
-  padding-left: 0.2em;
-}
-
-.menu:after {
-  content: "]";
-  padding-right: 0.2em;
-}
-
-.menu > li {
-  display: inline;
-}
-
-.menu > li:before {
-  content: "|";
-  padding-right: 0.7em;
-  padding-left: 0.7em;
-}
-
-.menu > li:nth-child(1):before {
-  content: "";
-  padding: 0;
 }
 
 .loginbox{

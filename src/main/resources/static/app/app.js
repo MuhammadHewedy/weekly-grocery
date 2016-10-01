@@ -31,7 +31,7 @@ config(['$routeProvider', '$httpProvider', '$translateProvider', function($route
             } else {
                 if ($rootScope.user) {
                     if (next.$$route.originalPath == '/login') {
-                        $location.path('/')
+                        $location.path('/');
                     }
                 } else {
                 	if (next.$$route.originalPath != '/register'){
@@ -48,17 +48,17 @@ function authenticateOnServer(LoginService, $rootScope, $location) {
         function(user) {
             if (user) {
                 $rootScope.user = user;
-                $location.path('/')
+                $location.path('/');
                 console.log('authenticated: ', user);
             } else {
-                $rootScope.user = null
+                $rootScope.user = null;
                 if ($location.path != '/register'){
             		$location.path('/login');
             	}
             }
         },
         function() {
-        	$rootScope.user = null
+        	$rootScope.user = null;
             if ($location.path() != '/register'){
         		$location.path('/login');
         	}
