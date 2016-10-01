@@ -10,6 +10,9 @@ import weeklygrocery.beans.Item;
 
 public interface ItemRepo extends PagingAndSortingRepository<Item, Long> {
 
-	@Query("select distinct o.name from Item o where o.name like %:search%")
-	List<Item> getAllDistinctNames(@Param("search") String search);
+	@Query("select distinct i.name from Item i where i.name like %:search%")
+	List<String> getAllDistinctNames(@Param("search") String search);
+
+	@Query("select distinct i.name from Item i join i.plan p join p.user u where u.username = ?#{principal.username} and i.name like %:search%")
+	List<String> getAllDistinctNamesForCurrentUser(@Param("search") String search);
 }

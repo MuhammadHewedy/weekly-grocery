@@ -49,7 +49,9 @@ public class PlanController {
 	@GetMapping("/items/{search}")
 	@PreAuthorize("hasRole('ROLE_USER')")
 	public ResponseEntity<?> getDistinctItemNames(@PathVariable("search") String search) {
-		return ResponseEntity.ok(itemRepo.getAllDistinctNames(search));
+		List<String> result = itemRepo.getAllDistinctNamesForCurrentUser(search);
+		result.addAll(itemRepo.getAllDistinctNames(search));
+		return ResponseEntity.ok(result);
 	}
 
 }

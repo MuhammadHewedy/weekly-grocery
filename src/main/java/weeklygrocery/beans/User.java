@@ -82,5 +82,4 @@ public class User extends BaseEntity implements UserDetails {
 	public static enum Role {
 		ROLE_ADMIN, ROLE_USER
 	}
-
 }

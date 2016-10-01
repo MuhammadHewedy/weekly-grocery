@@ -2,6 +2,7 @@ package weeklygrocery.beans;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -10,6 +11,9 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.validation.constraints.NotNull;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonProperty.Access;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -26,8 +30,8 @@ public class Plan extends BaseEntity {
 	private Long id;
 
 	@NotNull
-	@OneToMany
-	@JoinColumn(name = "plan_id")
+	@JsonProperty(access = Access.WRITE_ONLY)
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "plan")
 	private List<Item> items;
 
 	@ManyToOne
