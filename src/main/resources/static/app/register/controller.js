@@ -9,7 +9,8 @@ angular.module('myApp')
     });
 }])
 
-.controller('RegisterCtrl', ['$scope', '$rootScope', '$location', 'RegisterService', 'AlertService', function($scope, $rootScope, $location, RegisterService, AlertService) {
+.controller('RegisterCtrl', ['$scope', '$rootScope', '$location', 'RegisterService', 'AlertService', 'LoginServiceProxy', 
+                             function($scope, $rootScope, $location, RegisterService, AlertService, LoginServiceProxy) {
 
     $scope.userInfo = {
         username: '',
@@ -19,13 +20,11 @@ angular.module('myApp')
     $scope.register = function() {
     	RegisterService.register($scope.userInfo).then(
             function() {
-//                $location.path('/login');
-                AlertService.success("success.register");
+            	CommonLoginService.login($scope.userInfo);
             },
             function(error) {
                 AlertService.error(error.data.message);
                 console.log(error.data.message);
             });
     }
-
 }]);

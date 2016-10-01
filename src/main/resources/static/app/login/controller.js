@@ -9,7 +9,8 @@ angular.module('myApp')
     });
 }])
 
-.controller('LoginCtrl', ['$scope', '$rootScope', '$location', 'LoginService', 'AlertService', function($scope, $rootScope, $location, LoginService, AlertService) {
+.controller('LoginCtrl', ['$scope', '$rootScope', '$location', 'LoginService', 'AlertService', 'LoginServiceProxy', 
+                          function($scope, $rootScope, $location, LoginService, AlertService, LoginServiceProxy) {
 
     $scope.credentials = {
         username: '',
@@ -17,17 +18,7 @@ angular.module('myApp')
     };
 
     $scope.login = function() {
-        LoginService.login($scope.credentials).then(
-            function(user) {
-                $rootScope.user = user;
-                $location.path('/')
-                console.log('authenticated: ', user);
-            },
-            function(error) {
-                $rootScope.user = null;
-                AlertService.error(error.data.message);
-                console.log(error.data.message);
-            });
+    	CommonLoginService.login($scope.credentials);
     }
 
 }]);
