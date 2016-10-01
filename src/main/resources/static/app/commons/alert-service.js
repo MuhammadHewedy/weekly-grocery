@@ -30,7 +30,7 @@ angular.module('myApp')
 }]);
 
 function doAlert($rootScope, $location, $anchorScroll, alert, timeMillis, defaultTimeMillis) {
-    var alertId = 'alert.' + alert.id;
+    var alertId = /*'alert.' + */alert.id;
 
     $rootScope.alerts = [];
     $rootScope.alerts.push(alert);
@@ -42,6 +42,7 @@ function doAlert($rootScope, $location, $anchorScroll, alert, timeMillis, defaul
 function autoHide(alertId, timeMillis) {
     setTimeout(function() {
         console.log($('#alert'));
-        $('#alert').fadeOut('slow')
+//        $('#alert').fadeOut('slow');
+        $('.alert').fadeOut('slow');
     }, timeMillis);
 }

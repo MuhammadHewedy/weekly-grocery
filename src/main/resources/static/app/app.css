@@ -41,5 +41,9 @@ body{
 .loginbox{
 	margin: auto;
     float: none;
-    margin-top: 15%;
+    margin-top: 10%;
+}
+
+.alertContainer{
+	margin-top: 5%;
 }
