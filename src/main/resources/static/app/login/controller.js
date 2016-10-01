@@ -18,7 +18,7 @@ angular.module('myApp')
     };
 
     $scope.login = function() {
-    	CommonLoginService.login($scope.credentials);
+    	LoginServiceProxy.login($scope.credentials);
     }
 
 }]);

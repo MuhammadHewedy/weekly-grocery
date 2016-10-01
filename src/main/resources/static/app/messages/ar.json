@@ -20,5 +20,8 @@
 	"User credentials have expired": "معلومات دخول المستخدم إنتهت",
 	"User is disabled": "المستخدم معكل",
 	"User account has expired": "صلاحية الحساب إنتهت",
-	"User account is locked": "الحساب مغلق"
+	"User account is locked": "الحساب مغلق",
+	"repeat.password": "أعد إدخال كلمة المرور",
+	"passwords.not.match": "كلمتي المرور غير متطابقتين, أعد المحاولة",
+	"field.required": "الحقل مطلوب"
 }

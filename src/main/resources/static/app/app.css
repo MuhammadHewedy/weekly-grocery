@@ -38,3 +38,8 @@ body{
   padding: 0;
 }
 
+.loginbox{
+	margin: auto;
+    float: none;
+    margin-top: 15%;
+}

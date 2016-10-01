@@ -14,17 +14,23 @@ angular.module('myApp')
 
     $scope.userInfo = {
         username: '',
-        password: ''
+        password: '',
+        password2: ''
     };
 
     $scope.register = function() {
-    	RegisterService.register($scope.userInfo).then(
-            function() {
-            	CommonLoginService.login($scope.userInfo);
-            },
-            function(error) {
-                AlertService.error(error.data.message);
-                console.log(error.data.message);
-            });
+    	
+    	if ($scope.userInfo.password !== $scope.userInfo.password2){
+    		AlertService.error('passwords.not.match');
+    	}else{
+    		RegisterService.register($scope.userInfo).then(
+    	            function() {
+    	            	LoginServiceProxy.login($scope.userInfo);
+    	            },
+    	            function(error) {
+    	                AlertService.error(error.data.message);
+    	                console.log(error.data.message);
+    	            });
+    	}
     }
 }]);
