@@ -34,7 +34,9 @@ config(['$routeProvider', '$httpProvider', '$translateProvider', function($route
                         $location.path('/')
                     }
                 } else {
-                    $location.path('/login');
+                	if (next.$$route.originalPath != '/register'){
+                		$location.path('/login');
+                	}
                 }
             }
         }
@@ -50,11 +52,15 @@ function authenticateOnServer(LoginService, $rootScope, $location) {
                 console.log('authenticated: ', user);
             } else {
                 $rootScope.user = null
-                $location.path('/login')
+                if ($location.path != '/register'){
+            		$location.path('/login');
+            	}
             }
         },
         function() {
-            $rootScope.user = null
-            $location.path('/login')
+        	$rootScope.user = null
+            if ($location.path() != '/register'){
+        		$location.path('/login');
+        	}
         });
 }

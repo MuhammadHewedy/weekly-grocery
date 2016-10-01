@@ -33,7 +33,7 @@
     <div class="alert alert-{{alert.type}} alert-dismissable" ng-repeat="alert in alerts">
         <div style="overflow: visible" id="alert.{{alert.id}}"></div>
         <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-        {{alert.message}}
+        {{alert.message | translate}}
         <a href="{{alert.link}}" target="_blank" class="alert-link" ng-show="alert.link">More</a>.
     </div>
 
@@ -66,11 +66,13 @@
   <!-- services -->
   <script src="login/service.js"></script>
   <script src="menu/service.js"></script>
+  <script src="register/service.js"></script>
 
   <!-- controllers -->
   <script src="login/controller.js"></script>
   <script src="home/controller.js"></script>
   <script src="menu/controller.js"></script>
+  <script src="register/controller.js"></script>
 
 </body>
 </html>

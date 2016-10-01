@@ -1,5 +1,5 @@
 {
-	"app.title" : "البقالة الإسبوعية",
+	"app.title" : "البقالة الإسبوعيه",
     "login.title": "تسجيل الدخول",
     "login": "دخول",
     "username": "إسم المستخدم",
@@ -7,5 +7,18 @@
     "logout": "خروج",
     "manage_applicant": "إدارة الطلبات",
     "manage_admin": "إدارة مدراء النظام",
-    "home_paragraph": "مرحبا, من فضلك إختر من القائمة بالأعلى."
+    "home_paragraph": "مرحبا, من فضلك إختر من القائمة بالأعلى.",
+    "register.title": "تسجيل مستخدم جديد",
+    "register": "سجل",
+    "user.already.exists": "إسم المستخدم موجود من قبل, الرجاء قم بإختيار إسم آخر",
+    "success.register": "تم إنشاء المستخدم بنجاح, الأن رجاء قم بتسجيل الدخول",
+    "to.register.page": "لا يوجد لديك مستخدم؟ قم بالتسجيل الآن",
+    "to.login.page": "العودة لصفحة تسجيل الدخول",
+    "Bad credentials": "إسم المستخدم أو كلمة المرور غير صحيحة",
+    "Access is denied": "لا تملك صلاحية الوصول",
+	"Empty Password": "كلمة المرور فارغة",
+	"User credentials have expired": "معلومات دخول المستخدم إنتهت",
+	"User is disabled": "المستخدم معكل",
+	"User account has expired": "صلاحية الحساب إنتهت",
+	"User account is locked": "الحساب مغلق"
 }
