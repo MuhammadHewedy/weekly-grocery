@@ -34,7 +34,7 @@ public class Plan extends BaseEntity {
 
 	@NotNull
 	@JsonProperty(access = Access.WRITE_ONLY)
-	@OneToMany(cascade = CascadeType.ALL, mappedBy = "plan")
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "plan", orphanRemoval = true)
 	private List<Item> items;
 
 	@JsonIgnore

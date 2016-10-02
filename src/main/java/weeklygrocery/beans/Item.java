@@ -8,6 +8,9 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotNull;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonProperty.Access;
+
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
@@ -27,6 +30,7 @@ public class Item extends BaseEntity {
 
 	private Integer count = 1;
 	
+	@JsonProperty(access = Access.WRITE_ONLY)
 	@ManyToOne
 	@JoinColumn(nullable = false, updatable = false)
 	private Plan plan;

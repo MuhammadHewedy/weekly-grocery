@@ -15,7 +15,7 @@
 				<tr ng-repeat="plan in list">
 					<td>
 						<span class="text-info">
-							<a href="#/view/{{plan.id}}">{{'week_no' | translate}} {{plan.weekNo}}</a>
+							<a href="#/weeklist/view/{{plan.id}}">{{'week_no' | translate}} {{plan.weekNo}}</a>
 						</span>
 					</td>
 					<td>
@@ -25,7 +25,7 @@
 						<span class="text-info">{{plan.modifiedDate | date: 'short'}}</span>
 					</td>
 					<td>
-						<a class="btn btn-primary" href="#/edit/{{plan.id}}">
+						<a class="btn btn-primary" href="#/weeklist/edit/{{plan.id}}">
 							<i class="fa fa-edit" aria-hidden="true"></i>
 						</a>	
 					</td>

@@ -31,13 +31,16 @@
 	"itemTitleName": "الطلب",
 	"itemTitleCount": "العدد",
 	"field.numeric": "الحقل يقبل ارقام فقط",
-	"save": "حفظ",
-	"weeklist.add.title": "قائمة الإسبوع رقم ",
+	"add": "حفظ",
+	"weeklist.add.title": "إضافة قائمة الإسبوع رقم  ",
 	"edit": "تعديل",
 	"copy": "نسخ",
 	"delete": "حذف",
 	"week": "الإسبوع",
 	"week_no": "الإسبوع رقم ",
 	"createdDate": "تاريخ الإنشاء",
-	"modifiedDate": "أخر تاريخ تعديل"
+	"modifiedDate": "أخر تاريخ تعديل",
+	"edit": "تعديل",
+	"weeklist.edit.title": "تعديل قائمة الإسبوع رقم  ",
+	"back": "رجوع"
 }

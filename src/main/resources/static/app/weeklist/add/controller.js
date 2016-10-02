@@ -12,6 +12,7 @@ angular.module('myApp')
 .controller('AddWeeklistCtrl', ['$scope', '$rootScope', '$location', 'AddWeeklistService', 'AlertService',
                              function($scope, $rootScope, $location, AddWeeklistService, AlertService) {
 
+	$scope.type = 'add';
     $scope.list = [{}];
     
     $scope.addNew = function(){
