@@ -28,7 +28,7 @@ angular.module('myApp')
     $scope.save = function(){
     	$scope.plan.items = $scope.list;
     	EditWeeklistService.save($scope.plan).then(function(){
-    		AlertService.success({next: '/weeklist'});
+    		AlertService.success({next: '/weeklist', timeMillis: 500});
     	}, function(){
     		AlertService.error();
     	});
@@ -47,6 +47,12 @@ angular.module('myApp')
     	});
     }
     $scope.get = get;
+    
+    $scope.searchItems = function(val) {
+        return EditWeeklistService.searchItems(val).then(function(response){
+          return response.data;
+        });
+      };
     
     get($routeParams.id);
     

@@ -16,6 +16,12 @@ angular.module('myApp')
                 method: 'GET',
                 url: '/api/plans/' + planId 
             });
-        }
+        },
+        searchItems : function(term) {
+			return $http({
+				method : 'GET',
+				url : '/api/plans/items/' + term
+			});
+		}
     }
 }]);
