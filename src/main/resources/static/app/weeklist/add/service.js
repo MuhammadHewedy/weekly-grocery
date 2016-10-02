@@ -2,7 +2,7 @@
 
 angular.module('myApp')
 
-.factory('AddWeeklistService', ['$http', function($http) {
+.factory('AddWeeklistService', ['$http', '$q', function($http, $q) {
     return {
         save: function(plan) {
             return $http({
@@ -10,6 +10,12 @@ angular.module('myApp')
                 url: '/api/plans',
                 data: plan
             });
-        }
+        },
+		searchItems : function(term) {
+			return $http({
+				method : 'GET',
+				url : '/api/plans/items/' + term
+			});
+		}
     }
 }]);

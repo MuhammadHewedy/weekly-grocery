@@ -2,7 +2,7 @@
 
 // Declare app level module which depends on views, and components
 angular.module('myApp', [
-    'ngRoute', 'pascalprecht.translate', 'ngMessages'
+    'ngRoute', 'pascalprecht.translate', 'ngMessages', 'ui.bootstrap'
 ]).
 config(['$routeProvider', '$httpProvider', '$translateProvider', function($routeProvider, $httpProvider, $translateProvider) {
 

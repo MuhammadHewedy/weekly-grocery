@@ -2,7 +2,8 @@
 
 angular.module('myApp')
 
-.controller('MenuCtrl', ['$rootScope', '$location', '$scope', 'LoginService', 'MenuService', function($rootScope, $location, $scope, LoginService, MenuService) {
+.controller('MenuCtrl', ['$rootScope', '$location', '$scope', 'LoginService', 'MenuService', '$routeParams',
+                         function($rootScope, $location, $scope, LoginService, MenuService, $routeParams) {
 
     $scope.userMenu = []
 
@@ -20,7 +21,12 @@ angular.module('myApp')
     }
     
     $scope.isActive = function(item){
-    	return $location.path() == item.link ||
-    		(item.subLinks && item.subLinks.indexOf($location.path()) >= 0);
+    	if ($location.path() == item.link){
+    		return true;
+    	}else if (item.subLinks){
+    		var path = $location.path();
+        	Object.keys($routeParams).forEach(function(k){path = path.replace($routeParams[k], '')});
+        	return item.subLinks.indexOf(path) >= 0;
+    	}
     }
 }]);

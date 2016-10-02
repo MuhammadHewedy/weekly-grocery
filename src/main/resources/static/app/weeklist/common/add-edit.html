@@ -15,7 +15,7 @@
 					<td>
 						<div class="form-group">
 							<input type="text" class="form-control" name="itemName{{$index}}" autofocus ng-model="item.name"
-								required />
+								required autocomplete="off" uib-typeahead="address for address in searchItems($viewValue)"/>
 							<div ng-messages="form['itemName' + $index].$error" ng-if="form['itemName' + $index].$dirty" class="has-error">
 								<div class="help-block" ng-message="required">{{'field.required' | translate}}</div>
 							</div>

@@ -10,7 +10,7 @@ angular.module('myApp')
     title: 'week_list',
     role: ['ROLE_USER'],
     link: '/weeklist',
-    subLinks: ['/weeklist/edit/64']
+    subLinks: ['/weeklist/edit/']
 }, {
     title: 'add_new_week',
     role: ['ROLE_USER'],

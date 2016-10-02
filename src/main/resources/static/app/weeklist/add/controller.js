@@ -9,8 +9,8 @@ angular.module('myApp')
     });
 }])
 
-.controller('AddWeeklistCtrl', ['$scope', '$rootScope', '$location', 'AddWeeklistService', 'AlertService',
-                             function($scope, $rootScope, $location, AddWeeklistService, AlertService) {
+.controller('AddWeeklistCtrl', ['$scope', '$rootScope', '$location', 'AddWeeklistService', 'AlertService', '$http',
+                             function($scope, $rootScope, $location, AddWeeklistService, AlertService, $http) {
 
 	$scope.type = 'add';
     $scope.list = [{}];
@@ -42,4 +42,10 @@ angular.module('myApp')
         d.setDate(d.getDate()+4-(d.getDay()||7));
         return Math.ceil((((d-new Date(d.getFullYear(),0,1))/8.64e7)+1)/7);
     };
+   
+    $scope.searchItems = function(val) {
+        return AddWeeklistService.searchItems(val).then(function(response){
+          return response.data;
+        });
+      };
 }]);
