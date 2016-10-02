@@ -30,7 +30,7 @@ angular.module('myApp')
     		weekNo: $scope.weekNo(),
     		items: $scope.list
     	}).then(function(){
-    		AlertService.success({next: '/weeklist'});
+    		AlertService.success({next: '/weeklist', timeMillis: 500});
     	}, function(){
     		AlertService.error();
     	});
