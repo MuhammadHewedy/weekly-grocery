@@ -9,6 +9,12 @@ angular.module('myApp')
                 method: 'GET',
                 url: '/api/plans'
             });
+        },
+        remove: function(planId) {
+            return $http({
+                method: 'DELETE',
+                url: '/api/plans/' + planId
+            });
         }
     }
 }]);

@@ -21,8 +21,15 @@ angular.module('myApp')
 			AlertService.error();
 		});
 	}
-	
 	$scope.list = list;
+	
+	$scope.remove = function(planId){
+		WeeklistService.remove(planId).then(function(){
+			list();
+		}, function(){
+			AlertService.error();
+		});
+	}
+	
 	list();
-    
 }]);

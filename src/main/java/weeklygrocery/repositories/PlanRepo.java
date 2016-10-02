@@ -8,5 +8,5 @@ import weeklygrocery.beans.Plan;
 
 public interface PlanRepo extends PagingAndSortingRepository<Plan, Long> {
 
-	List<Plan> findFirst20ByUserIdOrderByIdDesc(Long userId);
+	List<Plan> findFirst10ByUserIdOrderByIdDesc(Long userId);
 }

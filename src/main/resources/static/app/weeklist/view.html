@@ -14,27 +14,29 @@
 			<tbody>
 				<tr ng-repeat="plan in list">
 					<td>
-						<span class="text-info">{{'week_no' | translate}} {{plan.weekNo}}</span>
+						<span class="text-info">
+							<a href="#/view/{{plan.id}}">{{'week_no' | translate}} {{plan.weekNo}}</a>
+						</span>
 					</td>
 					<td>
-						<span class="text-info">{{plan.createdDate}}</span>
+						<span class="text-info">{{plan.createdDate | date: 'short'}}</span>
 					</td>
 					<td>
-						<span class="text-info">{{plan.modifiedDate}}</span>
+						<span class="text-info">{{plan.modifiedDate | date: 'short'}}</span>
 					</td>
 					<td>
-						<button class="btn btn-primary" ng-click="" >
+						<a class="btn btn-primary" href="#/edit/{{plan.id}}">
 							<i class="fa fa-edit" aria-hidden="true"></i>
-						</button>	
+						</a>	
 					</td>
 					
 					<td >
-						<button class="btn btn-info" ng-click="" >
+						<button class="btn btn-info" ng-click="copy(plan.id)" >
 							<i class="fa fa-copy" aria-hidden="true"></i>
 						</button>
 					</td>
 					<td >
-						<button class="btn btn-danger" ng-click="" >
+						<button class="btn btn-danger" ng-click="remove(plan.id)" >
 							<i class="fa fa-minus" aria-hidden="true"></i>
 						</button>
 					</td>
