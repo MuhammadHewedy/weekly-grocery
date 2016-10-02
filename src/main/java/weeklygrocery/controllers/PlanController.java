@@ -1,5 +1,6 @@
 package weeklygrocery.controllers;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 import javax.validation.Valid;
@@ -80,6 +81,7 @@ public class PlanController {
 	private ResponseEntity<?> saveOrUpdate(Plan plan) {
 		plan.setUser(Util.currentUser().get());
 		plan.getItems().forEach(i -> i.setPlan(plan));
+		plan.setModifiedDate(LocalDateTime.now());
 		planRepo.save(plan);
 		return ResponseEntity.ok().build();
 	}

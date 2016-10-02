@@ -19,7 +19,8 @@ angular.module('myApp')
         })
     }
     
-    $scope.isActive = function(itemLink){
-    	return $location.path() == itemLink;
+    $scope.isActive = function(item){
+    	return $location.path() == item.link ||
+    		(item.subLinks && item.subLinks.indexOf($location.path()) >= 0);
     }
 }]);
