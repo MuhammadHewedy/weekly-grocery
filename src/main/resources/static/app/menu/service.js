@@ -14,4 +14,13 @@ angular.module('myApp')
     title: 'add_new_week',
     role: ['ROLE_USER'],
     link: '/weeklist/add'
-}]);
+}])
+.value('LandingPageService', [{
+	role: 'ROLE_ADMIN',
+	link: '/home'
+},
+{
+	role: 'ROLE_USER',
+	link: '/weeklist'
+}
+]);

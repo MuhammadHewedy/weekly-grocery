@@ -28,9 +28,16 @@
 	"field.required": "الحقل مطلوب",
 	"add_new_week": "إضافة إسبوع جديد",
 	"week_list": "الأسابيع الماضية",
-	"name": "الطلب",
-	"count": "العدد",
+	"itemTitleName": "الطلب",
+	"itemTitleCount": "العدد",
 	"field.numeric": "الحقل يقبل ارقام فقط",
 	"save": "حفظ",
-	"weeklist.add.title": "قائمة الإسبوع رقم "
+	"weeklist.add.title": "قائمة الإسبوع رقم ",
+	"edit": "تعديل",
+	"copy": "نسخ",
+	"delete": "حذف",
+	"week": "الإسبوع",
+	"week_no": "الإسبوع رقم ",
+	"createdDate": "تاريخ الإنشاء",
+	"modifiedDate": "أخر تاريخ تعديل"
 }

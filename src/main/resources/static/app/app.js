@@ -18,7 +18,7 @@ config(['$routeProvider', '$httpProvider', '$translateProvider', function($route
 
     $httpProvider.defaults.headers.common['Accept-Language'] = 'ar';
 
-}]).run(['$rootScope', '$location', 'LoginService', 'AlertService', function($rootScope, $location, LoginService, AlertService) {
+}]).run(['$rootScope', '$location', 'LoginService', 'AlertService', 'LandingPageService', function($rootScope, $location, LoginService, AlertService, LandingPageService) {
 
     $rootScope.user = null;
 
@@ -32,6 +32,10 @@ config(['$routeProvider', '$httpProvider', '$translateProvider', function($route
                 if ($rootScope.user) {
                     if (next.$$route.originalPath === '/login') {
                         $location.path('/');
+                    }else if (next.$$route.originalPath === '/home'){
+                    	var landingPage = LandingPageService.find(function(e){ return e.role === $rootScope.user.role }).link;
+                    	console.log('opening landing page: ' + landingPage);
+                    	landingPage && $location.path(landingPage);
                     }
                 } else {
                 	if (next.$$route.originalPath !== '/register'){

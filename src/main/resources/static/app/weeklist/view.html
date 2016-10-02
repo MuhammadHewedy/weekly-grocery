@@ -1,0 +1,41 @@
+<div class="row">
+	<form name="form">
+		<table class="table" novalidate>
+			<thead>
+				<tr>
+					<th translate>week</th>
+					<th translate>createdDate</th>
+					<th translate>modifiedDate</th>
+					<th style="width: 10%;" translate>edit</th>
+					<th style="width: 10%;" translate>copy</th>
+					<th style="width: 10%;" translate>delete</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="plan in list">
+					<td>
+						<span class="text-info">{{'week_no' | translate}} {{plan.weekNo}}</span>
+					</td>
+					<td>
+						<span class="text-info">{{plan.createdDate}}</span>
+					</td>
+					<td>
+						<span class="text-info">{{plan.modifiedDate}}</span>
+					</td>
+					<td>
+						
+					</td>
+					
+					<td >
+						<button class="btn btn-danger" ng-click="" >
+							<i class="fa fa-minus" aria-hidden="true"></i>
+						</button>
+					</td>
+					<td >
+						
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</form>
+</div>

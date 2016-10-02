@@ -12,6 +12,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.validation.constraints.NotNull;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonProperty.Access;
 
@@ -36,6 +37,7 @@ public class Plan extends BaseEntity {
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "plan")
 	private List<Item> items;
 
+	@JsonIgnore
 	@ManyToOne
 	@JoinColumn(nullable = false, updatable = false)
 	private User user;
