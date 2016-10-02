@@ -6,9 +6,9 @@
 					<th translate>week</th>
 					<th translate>createdDate</th>
 					<th translate>modifiedDate</th>
-					<th style="width: 10%;" translate>edit</th>
-					<th style="width: 10%;" translate>copy</th>
-					<th style="width: 10%;" translate>delete</th>
+					<th style="width: 5%;" translate>edit</th>
+					<th style="width: 5%;" translate>copy</th>
+					<th style="width: 5%;" translate>delete</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -23,16 +23,20 @@
 						<span class="text-info">{{plan.modifiedDate}}</span>
 					</td>
 					<td>
-						
+						<button class="btn btn-primary" ng-click="" >
+							<i class="fa fa-edit" aria-hidden="true"></i>
+						</button>	
 					</td>
 					
+					<td >
+						<button class="btn btn-info" ng-click="" >
+							<i class="fa fa-copy" aria-hidden="true"></i>
+						</button>
+					</td>
 					<td >
 						<button class="btn btn-danger" ng-click="" >
 							<i class="fa fa-minus" aria-hidden="true"></i>
 						</button>
-					</td>
-					<td >
-						
 					</td>
 				</tr>
 			</tbody>
