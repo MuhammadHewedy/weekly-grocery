@@ -20,6 +20,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.data.repository.query.SecurityEvaluationContextExtension;
 import org.springframework.security.web.AuthenticationEntryPoint;
 import org.springframework.security.web.authentication.logout.HttpStatusReturningLogoutSuccessHandler;
+import org.springframework.security.web.csrf.CookieCsrfTokenRepository;
 
 import weeklygrocery.repositories.UserRepo;
 
@@ -48,7 +49,10 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 				.logoutUrl("/api/auth/logout");
 		
 		if (Stream.of(environment.getActiveProfiles()).noneMatch(p -> p.contains("prod"))) {
-			http.csrf().disable().headers().frameOptions().disable();
+			http.csrf().disable()
+			.headers().frameOptions().disable();
+		}else {
+			http.csrf().csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse());
 		}
 	}
 
