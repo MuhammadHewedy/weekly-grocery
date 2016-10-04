@@ -12,6 +12,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
 import org.springframework.security.core.GrantedAuthority;
@@ -27,6 +28,7 @@ import lombok.EqualsAndHashCode;
 
 @Data
 @Entity
+@Table(name = "users")
 @EqualsAndHashCode(callSuper = false)
 public class User extends BaseEntity implements UserDetails {
 
