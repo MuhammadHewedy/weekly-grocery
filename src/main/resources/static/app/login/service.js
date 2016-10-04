@@ -19,7 +19,7 @@ angular.module('myApp')
             });
         },
         logout: function() {
-            return $http.get('/api/auth/logout')
+            return $http.post('/logout')
         }
     }
 }]);

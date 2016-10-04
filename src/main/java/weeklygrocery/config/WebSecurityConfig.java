@@ -45,8 +45,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 				.antMatchers("/api/**").authenticated()
 				.anyRequest().permitAll()
 			.and().logout()
-				.logoutSuccessHandler(new HttpStatusReturningLogoutSuccessHandler())
-				.logoutUrl("/api/auth/logout");
+				.logoutSuccessHandler(new HttpStatusReturningLogoutSuccessHandler());
 		
 		if (Stream.of(environment.getActiveProfiles()).noneMatch(p -> p.contains("prod"))) {
 			http.csrf().disable()
