@@ -35,13 +35,14 @@ dependencies {
 	compile('org.springframework.security:spring-security-data')
 	compile("com.fasterxml.jackson.datatype:jackson-datatype-jsr310")
 	runtime('com.h2database:h2')
+	runtime('org.postgresql:postgresql')
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 }
 
-task my_npm_install(type: NpmTask) {
+task npm_install(type: NpmTask) {
 	description = "Installs dependencies from package.json"
 	workingDir = file("${project.projectDir}/src/main/resources/static")
 	args = ['install']
 }
 
-build.dependsOn(my_npm_install)
+//build.dependsOn(npm_install)
