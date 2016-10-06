@@ -45,4 +45,4 @@ task npm_install(type: NpmTask) {
 	args = ['install']
 }
 
-//build.dependsOn(npm_install)
+build.dependsOn(npm_install)
