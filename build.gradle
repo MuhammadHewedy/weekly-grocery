@@ -41,8 +41,9 @@ dependencies {
 
 task npm_install(type: NpmTask) {
 	description = "Installs dependencies from package.json"
-	workingDir = file("${project.buildDir}/resources/main/static")
+	workingDir = file("${project.projectDir}/src/main/resources/static")
 	args = ['install']
 }
 
-build.dependsOn(npm_install)
+compileJava.dependsOn(npm_install)
+
