@@ -41,7 +41,7 @@ dependencies {
 
 task npm_install(type: NpmTask) {
 	description = "Installs dependencies from package.json"
-	workingDir = file("${project.buildDir}/resources/src/main/resources/static")
+	workingDir = file("${project.buildDir}/resources/main/static")
 	args = ['install']
 }
 
