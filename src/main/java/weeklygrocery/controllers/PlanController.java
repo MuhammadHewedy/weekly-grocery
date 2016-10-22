@@ -67,7 +67,7 @@ public class PlanController {
 	@DeleteMapping("/{id}")
 	@PreAuthorize("hasRole('ROLE_USER')")
 	public ResponseEntity<?> remove(@PathVariable("id") Long id) {
-		planRepo.delete(id);
+//		planRepo.delete(id);
 		return ResponseEntity.ok().build();
 	}
 
